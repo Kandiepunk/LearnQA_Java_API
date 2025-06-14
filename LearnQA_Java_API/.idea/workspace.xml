@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b19384-9355-49a2-b5db-a7b9a83d5ad8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/GetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/HelloWorldTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/HelloWorldTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/HelloWorldTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/HelloWorldTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,10 +62,11 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.HelloWorldTest (2)">
-    <configuration name="HelloWorldTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.GetTest">
+    <configuration name="GetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LearnQA_Java_API (1)" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HelloWorldTest" />
+      <option name="MAIN_CLASS_NAME" value="GetTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -114,11 +112,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.GetTest" />
         <item itemvalue="JUnit.HelloWorldTest (2)" />
         <item itemvalue="JUnit.HelloWorldTest.testHelloWorld (1)" />
         <item itemvalue="JUnit.HelloWorldTest" />
         <item itemvalue="JUnit.HelloWorldTest.testHelloWorld" />
-        <item itemvalue="JUnit.HelloWorldTest (1)" />
       </list>
     </recent_temporary>
   </component>
