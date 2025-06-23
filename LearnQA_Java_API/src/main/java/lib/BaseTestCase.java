@@ -1,12 +1,9 @@
 package lib;
 
 import io.qameta.allure.Step;
-import io.restassured.http.Cookies;
 import io.restassured.http.Headers;
 import io.restassured.response.Response;
-import org.apache.http.Header;
 
-import java.util.HashMap;
 import java.util.Map;
 
 import static org.hamcrest.Matchers.hasKey;

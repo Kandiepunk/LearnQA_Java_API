@@ -1,14 +1,9 @@
 import io.restassured.RestAssured;
-import io.restassured.http.Header;
 import io.restassured.http.Headers;
-import io.restassured.path.json.JsonPath;
-import io.restassured.path.xml.XmlPath;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.ArgumentsSource;
 import org.junit.jupiter.params.provider.CsvSource;
-import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.*;
 

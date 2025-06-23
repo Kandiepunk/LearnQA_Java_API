@@ -2,35 +2,30 @@ import io.restassured.RestAssured;
 import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class HelloWorldTest {
 
     @Test
     public void testHelloFrom() {
-        System.out.println("Hello from Maxim");
+        System.out.println("Hello from Дмитрий");
     }
 
     @Test
     public void testRestAssured() {
         Map<String, String> params = new HashMap<>();
-        params.put("name", "Max");
+        params.put("name", "Dima");
 
 
         Response response = RestAssured
                 .given()
-//                .queryParam("name", "Max")
                 .queryParams(params)
                 .get("https://playground.learnqa.ru/api/hello")
                 .andReturn();
@@ -45,7 +40,6 @@ public class HelloWorldTest {
 
         JsonPath response = RestAssured
                 .given()
-//                .queryParam("name", "Max")
                 .queryParams(params)
                 .get("https://playground.learnqa.ru/api/hello")
                 .jsonPath();
@@ -62,11 +56,7 @@ public class HelloWorldTest {
     public void testRestAssuredAPICHeckType() {
         Response response = RestAssured
                 .given()
-//                .body("param1=value&param2=value2")
                 .body("{\"param1\":\"value\",\"param2\":\"value2\"}")
-                // или в теле запрос в JSON формате (сверху) или отдельными queryParam - ами (автоматом приведет в JSON формат) (снизу)
-//                .queryParam("param1", "value1")
-//                .queryParam("param2", "value2")
                 .post("https://playground.learnqa.ru/api/check_type")
                 .andReturn();
         response.print();
@@ -176,9 +166,6 @@ public class HelloWorldTest {
         System.out.println("\nCookies:");
         Map<String, String> responseCookies = responseForGet.getCookies();
         System.out.println(responseCookies);
-
-        //Выводим только значение куки "auth_cookie"
-        //Выводим и запоминаем куку
         String responseCookie = responseForGet.getCookie("auth_cookie");
         System.out.println(responseCookie);
 
@@ -188,7 +175,6 @@ public class HelloWorldTest {
         }
 
 
-        //Создаем второй запрос с передачей куки
         Response responseForCheck = RestAssured
                 .given()
                 .body(data)
@@ -205,7 +191,6 @@ public class HelloWorldTest {
         Response response = RestAssured
                 .get("https://playground.learnqa.ru/api/map")
                 .andReturn();
-//        assertTrue(response.statusCode() == 200,"Unexpected status code");
         assertEquals(200, response.statusCode(),"Unexpected status code");
     }
 
@@ -214,7 +199,6 @@ public class HelloWorldTest {
         Response response = RestAssured
                 .get("https://playground.learnqa.ru/api/map2")
                 .andReturn();
-//        assertTrue(response.statusCode() == 200,"Unexpected status code");
         assertEquals(404, response.statusCode(),"Unexpected status code");
     }
 

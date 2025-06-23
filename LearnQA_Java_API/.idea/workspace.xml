@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a7b19384-9355-49a2-b5db-a7b9a83d5ad8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/GetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HelloWorldTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/HomeworkTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lib/ApiCoreRequests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lib/Assertions.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lib/BaseTestCase.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/lib/DataGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/UserAuthTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/UserDeleteTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/UserEditTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/UserGetTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tests/UserRegisterTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/GetTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/HelloWorldTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,22 +63,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;JUnit.HelloWorldTest (2).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HelloWorldTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HelloWorldTest.testHelloWorld (1).executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HelloWorldTest.testHelloWorld.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.editor&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "JUnit.GetTest.executor": "Run",
+    "JUnit.HelloWorldTest (2).executor": "Run",
+    "JUnit.HelloWorldTest.executor": "Run",
+    "JUnit.HelloWorldTest.testHelloWorld (1).executor": "Run",
+    "JUnit.HelloWorldTest.testHelloWorld.executor": "Run",
+    "JUnit.UserAuthTest.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "D:/Homework/LearnQA_Java_API/LearnQA_Java_API/src/main/java",
+    "settings.editor.selected.configurable": "preferences.editor"
   }
-}</component>
-  <component name="RunManager" selected="JUnit.GetTest">
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Homework\LearnQA_Java_API\LearnQA_Java_API\src\main\java" />
+      <recent name="D:\Homework\LearnQA_Java_API\LearnQA_Java_API" />
+      <recent name="D:\Homework\LearnQA_Java_API\LearnQA_Java_API\src\test" />
+      <recent name="D:\Homework\LearnQA_Java_API\LearnQA_Java_API\src" />
+      <recent name="D:\Homework\LearnQA_Java_API\LearnQA_Java_API\src\test\java" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.UserAuthTest">
     <configuration name="GetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="LearnQA_Java_API (1)" />
       <option name="PACKAGE_NAME" value="" />
@@ -100,23 +131,28 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HelloWorldTest.testHelloWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="LearnQA_Java_API" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="HelloWorldTest" />
-      <option name="METHOD_NAME" value="testHelloWorld" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration name="UserAuthTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="LearnQA_Java_API (1)" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="tests" />
+      <option name="MAIN_CLASS_NAME" value="tests.UserAuthTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.UserAuthTest" />
         <item itemvalue="JUnit.GetTest" />
         <item itemvalue="JUnit.HelloWorldTest (2)" />
         <item itemvalue="JUnit.HelloWorldTest.testHelloWorld (1)" />
         <item itemvalue="JUnit.HelloWorldTest" />
-        <item itemvalue="JUnit.HelloWorldTest.testHelloWorld" />
       </list>
     </recent_temporary>
   </component>

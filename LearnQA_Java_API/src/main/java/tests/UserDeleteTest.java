@@ -1,10 +1,7 @@
 package tests;
 
 import io.qameta.allure.Allure;
-import io.qameta.allure.Step;
 import io.restassured.response.Response;
-import lib.ApiCoreRequests;
-import lib.Assertions;
 import lib.BaseTestCase;
 import lib.DataGenerator;
 import org.junit.jupiter.api.DisplayName;

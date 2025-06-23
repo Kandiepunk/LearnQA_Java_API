@@ -40,8 +40,8 @@ public class DataGenerator {
     }
 
     public static String getRandomString(int length) {
-        int leftLimit = 97; // letter 'a'
-        int rightLimit = 122; // letter 'z'
+        int leftLimit = 97;
+        int rightLimit = 122;
         Random random = new Random();
         StringBuilder buffer = new StringBuilder(length);
         for (int i = 0; i < length; i++) {

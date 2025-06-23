@@ -1,16 +1,8 @@
 package tests;
 
-import io.qameta.allure.Allure;
-import io.qameta.allure.Description;
-import io.qameta.allure.Link;
-import io.qameta.allure.Owner;
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import lib.ApiCoreRequests;
-import lib.Assertions;
 import lib.BaseTestCase;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.HashMap;
@@ -62,7 +54,7 @@ public class UserGetTest extends BaseTestCase {
 
         Assertions.assertJsonHasFields(responseUserData, expectedFields);
 
-        //Проверка выше заменяет все проверки ниже, т.к. создали новый Assertion.
+
         Assertions.assertJsonHasField(responseUserData, "username");
         Assertions.assertJsonHasField(responseUserData, "firstName");
         Assertions.assertJsonHasField(responseUserData, "lastName");

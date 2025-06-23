@@ -1,9 +1,6 @@
 package tests;
 
-import io.restassured.RestAssured;
 import io.restassured.response.Response;
-import lib.ApiCoreRequests;
-import lib.Assertions;
 import lib.BaseTestCase;
 import lib.DataGenerator;
 import org.junit.jupiter.api.*;
@@ -24,14 +21,7 @@ public class UserRegisterTest extends BaseTestCase {
     public void testCreateUserWithExistingEmail() {
         String email = "vinkotov@example.com";
 
-//        Map<String, String> userData = new HashMap<>();
-//        userData.put("email", email);
-//        userData.put("password", "123");
-//        userData.put("username", "learnqa");
-//        userData.put("firstName", "learnqa");
-//        userData.put("lastName", "learnqa");
 
-        //Код выше заменен на более упрощенный, т.к. позднее создали генератор регистрационных тестовых данных
         Map<String, String> userData = new HashMap<>();
         userData.put("email", email);
         userData = DataGenerator.getRegistrationData(userData);

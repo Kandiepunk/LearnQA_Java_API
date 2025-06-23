@@ -1,10 +1,6 @@
 package tests;
 
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import lib.ApiCoreRequests;
-import lib.Assertions;
 import lib.BaseTestCase;
 import lib.DataGenerator;
 import org.junit.jupiter.api.DisplayName;
@@ -20,7 +16,6 @@ public class UserEditTest extends BaseTestCase {
     @Test
     @DisplayName("Успешное изменение имени пользователя")
     public void testEditJustCreatedTest() {
-        //GENERATE USER
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
         Response responseCreateAuth = apiCoreRequests.makePostRequest(
@@ -30,7 +25,6 @@ public class UserEditTest extends BaseTestCase {
 
         String userId = getStringFromJson(responseCreateAuth, "id");
 
-        //LOGIN
         Map<String, String> authData = new HashMap<>();
         authData.put("email", userData.get("email"));
         authData.put("password", userData.get("password"));
@@ -45,11 +39,11 @@ public class UserEditTest extends BaseTestCase {
         String header = this.getHeader(responseGetAuth, "x-csrf-token");
         String cookie = this.getCookie(responseGetAuth, "auth_sid");
 
-        //EDIT
+
         String newName = "Change Name";
         Map<String, String> editData = new HashMap<>();
         editData.put("firstName", newName);
-//        editData = DataGenerator.getRegistrationData(editData);
+
 
         Response responseEditName = apiCoreRequests.makePutRequest(
                 BASE_URL + "/user/" + userId,
@@ -60,7 +54,7 @@ public class UserEditTest extends BaseTestCase {
 
         System.out.println("EDIT = " + responseEditName.asString());
 
-        //GET
+
         Response responseUserData = apiCoreRequests.makeGetRequest(
                 BASE_URL + "/user/" + userId,
                 header,
@@ -74,7 +68,7 @@ public class UserEditTest extends BaseTestCase {
     @Test
     @DisplayName("Невозможность изменения данных пользователя без авторизации")
     public void testEditUserDataNotAuth() {
-        //GENERATE USER
+
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
         Response responseCreateAuth = apiCoreRequests.makePostRequest(
@@ -82,7 +76,7 @@ public class UserEditTest extends BaseTestCase {
 
         String userId = getStringFromJson(responseCreateAuth, "id");
 
-        //EDIT
+
         String newName = "Change Name";
         Map<String, String> editData = new HashMap<>();
         editData.put("firstName", newName);
@@ -100,7 +94,7 @@ public class UserEditTest extends BaseTestCase {
     @Test
     @DisplayName("Невозможность изменения данных пользователя авторизованным из другого пользователя")
     public void testEditUserDataAuthAsOtherUser() {
-        //GENERATE FIRST USER
+
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
         Response responseCreateAuth = apiCoreRequests.makePostRequest(
@@ -108,7 +102,7 @@ public class UserEditTest extends BaseTestCase {
 
         String userId = getStringFromJson(responseCreateAuth, "id");
 
-        //GENERATE AND LOGIN SECOND USER
+
         Map<String, String> secondUserData = DataGenerator.getRegistrationData();
         Response responseCreateAuthSecond = apiCoreRequests.makePostRequest(
                 BASE_URL + "/user/", secondUserData);
@@ -127,7 +121,7 @@ public class UserEditTest extends BaseTestCase {
         String header = this.getHeader(responseGetAuth, "x-csrf-token");
         String cookie = this.getCookie(responseGetAuth, "auth_sid");
 
-        //EDIT
+
         String newName = "Change Name";
         Map<String, String> editData = new HashMap<>();
         editData.put("firstName", newName);
@@ -148,7 +142,7 @@ public class UserEditTest extends BaseTestCase {
     @Test
     @DisplayName("Невозможность изменения email пользователя на email без символа @")
     public void testEditIncorrectEmail() {
-        //GENERATE USER
+
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
         Response responseCreateAuth = apiCoreRequests.makePostRequest(
@@ -158,7 +152,7 @@ public class UserEditTest extends BaseTestCase {
 
         String userId = getStringFromJson(responseCreateAuth, "id");
 
-        //LOGIN
+
         Map<String, String> authData = new HashMap<>();
         authData.put("email", userData.get("email"));
         authData.put("password", userData.get("password"));
@@ -173,7 +167,7 @@ public class UserEditTest extends BaseTestCase {
         String header = this.getHeader(responseGetAuth, "x-csrf-token");
         String cookie = this.getCookie(responseGetAuth, "auth_sid");
 
-        //EDIT
+
         String newEmail = "maxexample.com";
         Map<String, String> editData = new HashMap<>();
         editData.put("email", newEmail);
@@ -190,7 +184,7 @@ public class UserEditTest extends BaseTestCase {
         Assertions.assertResponseCodeEquals(responseEditName, 400);
         Assertions.assertJsonByName(responseEditName, "error", "Invalid email format");
 
-        //GET
+
         Response responseUserData = apiCoreRequests.makeGetRequest(
                 BASE_URL + "/user/" + userId,
                 header,
@@ -204,7 +198,7 @@ public class UserEditTest extends BaseTestCase {
     @Test
     @DisplayName("Невозможность изменения имени пользователя на имя в один символ")
     public void testEditVeeryShortFirstName() {
-        //GENERATE USER
+
         Map<String, String> userData = DataGenerator.getRegistrationData();
 
         Response responseCreateAuth = apiCoreRequests.makePostRequest(
@@ -214,7 +208,7 @@ public class UserEditTest extends BaseTestCase {
 
         String userId = getStringFromJson(responseCreateAuth, "id");
 
-        //LOGIN
+
         Map<String, String> authData = new HashMap<>();
         authData.put("email", userData.get("email"));
         authData.put("password", userData.get("password"));
@@ -229,7 +223,7 @@ public class UserEditTest extends BaseTestCase {
         String header = this.getHeader(responseGetAuth, "x-csrf-token");
         String cookie = this.getCookie(responseGetAuth, "auth_sid");
 
-        //EDIT
+
         String newFirstName = "X";
         Map<String, String> editData = new HashMap<>();
         editData.put("firstName", newFirstName);
@@ -246,7 +240,7 @@ public class UserEditTest extends BaseTestCase {
         Assertions.assertResponseCodeEquals(responseEditName, 400);
         Assertions.assertJsonByName(responseEditName, "error", "The value for field `firstName` is too short");
 
-        //GET
+
         Response responseUserData = apiCoreRequests.makeGetRequest(
                 BASE_URL + "/user/" + userId,
                 header,

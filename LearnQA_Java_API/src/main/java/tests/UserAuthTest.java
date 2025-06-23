@@ -3,25 +3,16 @@ package tests;
 import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import io.restassured.RestAssured;
-import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
-import io.restassured.specification.RequestSpecification;
-import lib.ApiCoreRequests;
-import lib.Assertions;
 import lib.BaseTestCase;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import lib.ApiCoreRequests.*;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @Epic("Authorization cases")
 @Feature("Authorization")
@@ -39,13 +30,6 @@ public class UserAuthTest extends BaseTestCase {
         authData.put("email", "vinkotov@example.com");
         authData.put("password", "1234");
 
-//        Response responseGetAuth = RestAssured
-//                .given()
-//                .body(authData)
-//                .post(BASE_URL + "/user/login")
-//                .andReturn();
-
-        //код выше заменён этим из-за создания вспомогательных методов в классе lib/ApiCoreRequests.java
         Response responseGetAuth = apiCoreRequests.
                 makePostRequest(BASE_URL + "/user/login", authData);
 
@@ -58,14 +42,6 @@ public class UserAuthTest extends BaseTestCase {
     @Description("Тест успешно авторизуется по почте и паролю")
     @DisplayName("Тест положительной авторизации пользователя")
     public void testAuthUser() {
-//        Response responseCheckAuth = RestAssured
-//                .given()
-//                .header("x-csrf-token", this.header)
-//                .cookie("auth_sid", this.cookie)
-//                .get(BASE_URL + "/user/auth")
-//                .andReturn();
-
-        //код выше заменён этим из-за создания вспомогательных методов в классе lib/ApiCoreRequests.java
         Response responseCheckAuth = apiCoreRequests.
                 makeGetRequest(BASE_URL + "/user/auth",
                         this.header,
@@ -93,20 +69,5 @@ public class UserAuthTest extends BaseTestCase {
         } else {
             throw new IllegalArgumentException("Condition value is know: " + condition);
         }
-
-        // Тест ниже полностью заменился из-за создания вспомогательных методов в классе lib/ApiCoreRequests.java
-//        RequestSpecification spec = RestAssured.given();
-//        spec.baseUri(BASE_URL + "/user/auth");
-//
-//        if (condition.equals("cookie")) {
-//            spec.cookie("auth_sid", this.cookie);
-//        } else if (condition.equals("headers")) {
-//            spec.header("x-csrf-token", this.header);
-//        } else {
-//            throw new IllegalArgumentException("Condition value is know: " + condition);
-//        }
-//
-//        Response responseForCheck = spec.get().andReturn();
-//        Assertions.assertJsonByName(responseForCheck, "user_id", 0);
     }
 }
